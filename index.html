@@ -141,8 +141,8 @@ section{padding:64px 0;position:relative}
 .note{font-size:.72rem;color:var(--muted);text-align:center;margin-top:12px;line-height:1.6}
 .wa{display:block;text-align:center;margin-top:9px;font-size:.8rem;color:var(--ink2);text-decoration:underline}
 .msg{display:none;border-radius:6px;padding:13px;margin-bottom:14px;font-size:.88rem}
-.msg.err{display:block;background:#f3f1ee;border:1px solid var(--ink);color:var(--ink)}
-.msg.info{display:block;background:#f3f1ee;border:1px solid var(--grey);color:var(--ink2)}
+.msg.err{background:#f3f1ee;border:1px solid var(--ink);color:var(--ink)}
+.msg.info{background:#f3f1ee;border:1px solid var(--grey);color:var(--ink2)}
 .spin{width:17px;height:17px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;display:inline-block;animation:spin .7s linear infinite}
 .success{display:none;text-align:center}.success.show{display:block;animation:fade .4s both}
 .success .chk{width:58px;height:58px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:1.7rem;margin:0 auto 14px}
@@ -281,7 +281,7 @@ footer .bases{color:rgba(255,255,255,.4);font-size:.7rem;line-height:1.7;max-wid
           <div class="qpick">
             <button type="button" data-q="1"><span class="q">1</span><span class="p">$5.000</span></button>
             <button type="button" data-q="3" class="active"><span class="q">3</span><span class="p">$12.500</span><span class="save">ahorrás $2.500</span></button>
-            <button type="button" data-q="5"><span class="q">5</span><span class="p">$22.500</span></button>
+            <button type="button" data-q="10"><span class="q">10</span><span class="p">$37.500</span><span class="save">ahorrás $12.500</span></button>
           </div>
           <div class="stepper"><button type="button" id="minus">−</button><input id="cantidad" type="number" min="1" max="3600" value="3"><button type="button" id="plus">+</button></div>
         </div>
@@ -373,6 +373,7 @@ const CONFIG = {
   TOTAL      : 3600,
   PRICE_1    : 5000,
   PRICE_3    : 12500,
+  PRICE_10   : 37500,
   FALLBACK_SOLD : 1847,
   DEADLINE   : "2026-06-26T21:00:00-03:00"
 };
@@ -380,8 +381,8 @@ const $=id=>document.getElementById(id);
 const fmt=n=>"$"+n.toLocaleString("es-AR");
 const fmtN=n=>n.toLocaleString("es-AR");
 const pad=n=>String(n).padStart(2,"0");
-function priceFor(q){return Math.floor(q/3)*CONFIG.PRICE_3+(q%3)*CONFIG.PRICE_1;}
-
+function priceFor(q){var t=Math.floor(q/10),r=q%10;return t*CONFIG.PRICE_10+Math.floor(r/3)*CONFIG.PRICE_3+(r%3)*CONFIG.PRICE_1;}
+  
 addEventListener("scroll",()=>{const y=scrollY;$("hdr").classList.toggle("scrolled",y>40);$("sticky").classList.toggle("show",y>700);});
 $("waLink").href=$("waFoot").href="https://wa.me/"+CONFIG.WHATSAPP+"?text="+encodeURIComponent("Hola PDC! Quiero participar del sorteo.");
 $("igLink").href=CONFIG.INSTAGRAM;
