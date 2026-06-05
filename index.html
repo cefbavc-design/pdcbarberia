@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,900;1,9..144,500&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#ffffff; --paper2:#f1f1ef; --card:#ffffff;
+  --paper:#ffffff; --paper2:#f1f1ef; --card:#ffffff; --zone:#ebeae7;
   --ink:#0c0c0c; --ink2:#3c3b39; --grey:#575756; --muted:#8c8b87;
   --line:rgba(12,12,12,.16); --line2:rgba(12,12,12,.08);
   --disp:'Fraunces',serif; --body:'Poppins',sans-serif; --cdh:40px;
@@ -50,16 +50,16 @@ a{color:inherit;text-decoration:none}
 @media(max-width:560px){.cdbar{font-size:.55rem;gap:6px}.cdbar .when{display:none}}
 @keyframes blink{50%{opacity:.2}}
 
-header{position:fixed;top:var(--cdh);left:0;right:0;z-index:60;transition:.3s;border-bottom:1px solid transparent}
-header.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-color:var(--line2)}
+header{position:fixed;top:var(--cdh);left:0;right:0;z-index:60;transition:.3s;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1.5px solid var(--ink)}
+header.scrolled{box-shadow:0 8px 22px -18px rgba(0,0,0,.6)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:60px}
 .nav .wm-logo{width:108px;height:32px}
 .nav .top-cta{font-family:var(--disp);font-weight:900;font-size:.82rem;letter-spacing:.02em;text-transform:uppercase;background:var(--ink);color:#fff;padding:9px 18px;border-radius:3px;transition:.2s}
 .nav .top-cta:hover{background:#000}
 
 /* HERO */
-.hero{position:relative;min-height:100svh;display:flex;align-items:center;text-align:center;padding:calc(var(--cdh) + 80px) 0 62px;overflow:hidden}
-.hero-in{position:relative;z-index:2;width:100%}
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;text-align:center;padding:calc(var(--cdh) + 80px) 22px 62px;overflow:hidden;background:var(--zone)}
+.hero-in{position:relative;z-index:2;width:100%;max-width:760px;margin:0 auto;background:#fff;border:1.5px solid var(--ink);border-radius:8px;padding:44px 28px 38px;box-shadow:0 30px 70px -50px rgba(0,0,0,.45)}
 .hero .helm-logo{width:84px;height:112px;margin:0 auto 18px;animation:rise .8s both}
 .hero .eyebrow{display:block;margin-bottom:14px;animation:fade 1s .1s both}
 .hero h1{font-family:var(--disp);font-weight:900;font-size:clamp(2.1rem,7.4vw,4.1rem);line-height:.98;letter-spacing:-.01em;text-transform:uppercase;color:var(--ink);animation:rise .9s .15s both}
@@ -86,6 +86,7 @@ header.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(8px);borde
 @keyframes cellpulse{0%,100%{box-shadow:0 0 0 1px var(--ink)}50%{box-shadow:0 0 0 3px rgba(12,12,12,.25)}}
 
 section{padding:64px 0;position:relative}
+#premio{background:var(--zone)}
 .sec-h{text-align:center;margin-bottom:38px}
 .sec-h .helm-logo{width:32px;height:43px;margin:0 auto 12px}
 .sec-h .kick{display:block;margin-bottom:10px}
