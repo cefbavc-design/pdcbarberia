@@ -41,12 +41,13 @@ a{color:inherit;text-decoration:none}
 .btn-ghost:hover{background:var(--ink);color:#fff}
 
 /* countdown fijo */
-.cdbar{position:fixed;top:0;left:0;right:0;z-index:80;height:var(--cdh);display:flex;align-items:center;justify-content:center;gap:8px;
-  background:#000;border-bottom:1px solid #2a2a2a;
-  font-family:var(--body);font-weight:700;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#bdbcb8}
-.cdbar .dot{width:7px;height:7px;border-radius:50%;background:#fff;animation:blink 1.2s steps(2,end) infinite}
-.cdbar b{font-family:var(--disp);font-weight:600;font-size:.96rem;letter-spacing:.02em;color:#fff;font-variant-numeric:tabular-nums}
-.cdbar .when{color:#6f6e6b}
+.cdbar{position:fixed;top:0;left:0;right:0;z-index:80;height:var(--cdh);display:flex;align-items:center;justify-content:center;gap:10px;
+  background:#0c0c0c;border-bottom:2px solid var(--ink);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14);
+  font-family:var(--body);font-weight:700;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#cfcecb}
+.cdbar::before,.cdbar::after{content:"✦";color:rgba(255,255,255,.5);font-size:.76rem;line-height:1}
+.cdbar b{font-family:var(--disp);font-weight:600;font-size:.98rem;letter-spacing:.03em;color:#fff;font-variant-numeric:tabular-nums}
+.cdbar .when{color:#7a7975}
 @media(max-width:560px){.cdbar{font-size:.55rem;gap:6px}.cdbar .when{display:none}}
 @keyframes blink{50%{opacity:.2}}
 
@@ -101,16 +102,16 @@ section{padding:64px 0;position:relative}
 /* PREMIO = REGALO (gris/negro/blanco) */
 .prize{display:grid;grid-template-columns:auto 1fr;gap:46px;align-items:center;max-width:880px;margin:0 auto}
 @media(max-width:720px){.prize{grid-template-columns:1fr;gap:30px;text-align:center;justify-items:center}}
-.giftbox{position:relative;width:208px;height:196px;flex:none;animation:rise .8s both}
-.giftbox .lid{position:absolute;top:34px;left:-8px;right:-8px;height:40px;background:var(--card);border:1.5px solid var(--ink);border-radius:4px;z-index:3}
-.giftbox .body{position:absolute;top:70px;bottom:0;left:4px;right:4px;background:var(--card);border:2px solid var(--ink);border-radius:4px;box-shadow:0 0 0 3px var(--zone),0 0 0 5px var(--ink)}
-.giftbox .rib{position:absolute;top:34px;bottom:0;left:50%;transform:translateX(-50%);width:34px;background:linear-gradient(90deg,#3f3f3e,var(--grey) 45%,#6f6e6c);border-left:1px solid rgba(0,0,0,.2);border-right:1px solid rgba(0,0,0,.2);z-index:4}
-.giftbox .bow{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:80px;height:36px;z-index:5}
-.giftbox .bow::before,.giftbox .bow::after{content:"";position:absolute;top:0;width:38px;height:34px;background:linear-gradient(180deg,#6f6e6c,var(--grey));border:1.5px solid var(--ink)}
-.giftbox .bow::before{left:0;border-radius:70% 40% 60% 30%;transform:rotate(-12deg)}
-.giftbox .bow::after{right:0;border-radius:40% 70% 30% 60%;transform:rotate(12deg)}
-.giftbox .knot{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:20px;height:20px;border-radius:50%;background:var(--grey);border:1.5px solid var(--ink);z-index:6}
-.giftbox .tag{position:absolute;right:-14px;top:84px;background:var(--ink);color:#fff;font-family:var(--disp);font-weight:600;font-size:.82rem;letter-spacing:.04em;padding:5px 11px;border-radius:2px;transform:rotate(6deg);z-index:7}
+.giftbox{position:relative;width:220px;height:208px;flex:none;animation:rise .8s both}
+.giftbox .lid{position:absolute;top:36px;left:-10px;right:-10px;height:44px;background:var(--card);border:2px solid var(--ink);border-radius:4px;z-index:3;box-shadow:inset 0 0 0 3px #fff,inset 0 0 0 4px var(--ink)}
+.giftbox .body{position:absolute;top:74px;bottom:0;left:6px;right:6px;background:var(--card);border:2px solid var(--ink);border-radius:4px;box-shadow:inset 0 0 0 4px #fff,inset 0 0 0 5px var(--ink)}
+.giftbox .rib{position:absolute;top:36px;bottom:0;left:50%;transform:translateX(-50%);width:38px;background:repeating-linear-gradient(45deg,var(--grey) 0 7px,#6f6e6c 7px 14px);border-left:2px solid var(--ink);border-right:2px solid var(--ink);z-index:4}
+.giftbox .bow{position:absolute;top:6px;left:50%;transform:translateX(-50%);width:88px;height:40px;z-index:5}
+.giftbox .bow::before,.giftbox .bow::after{content:"";position:absolute;top:0;width:42px;height:38px;background:repeating-linear-gradient(45deg,var(--grey) 0 7px,#6f6e6c 7px 14px);border:2px solid var(--ink)}
+.giftbox .bow::before{left:0;border-radius:70% 40% 60% 30%;transform:rotate(-14deg)}
+.giftbox .bow::after{right:0;border-radius:40% 70% 30% 60%;transform:rotate(14deg)}
+.giftbox .knot{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:22px;height:22px;border-radius:50%;background:var(--grey);border:2px solid var(--ink);z-index:6}
+.giftbox .tag{position:absolute;right:-16px;top:90px;background:var(--ink);color:#fff;font-family:var(--disp);font-weight:900;font-size:.86rem;letter-spacing:.04em;padding:6px 12px;border-radius:2px;transform:rotate(6deg);z-index:7;box-shadow:0 6px 16px -8px rgba(0,0,0,.6)}
 .prize-copy h3{font-family:var(--disp);font-weight:900;font-size:clamp(1.9rem,5.6vw,2.9rem);line-height:1;text-transform:uppercase;color:var(--ink);letter-spacing:-.01em}
 .prize-copy h3 .grey{display:block}
 .prize-copy p{color:var(--ink2);margin:12px 0 18px;font-size:1.04rem;max-width:420px}
