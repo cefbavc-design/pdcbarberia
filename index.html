@@ -251,7 +251,8 @@ section{padding:64px 0;position:relative;background:#fff}
 .video-sec h2 .grey{display:block;color:#bdbcb8}
 .vframe{max-width:330px;margin:0 auto;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid #2a2a2a;background:#0a0a0a;position:relative}
 .vframe iframe,.vframe video{width:100%;height:100%;border:0;display:block;object-fit:cover}
-.vframe.reel{aspect-ratio:auto;max-width:340px;min-height:540px;background:transparent;border:0;border-radius:0;overflow:visible}
+.vframe.reel{aspect-ratio:auto;width:100%;max-width:540px;min-height:0;height:auto;background:transparent;border:0;border-radius:0;overflow:visible}
+.vframe.reel iframe,.vframe.reel blockquote.instagram-media{width:100%!important;max-width:540px!important;min-width:280px!important;margin:0 auto!important}
 .vplaceholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:#0a0a0a}
 .vplaceholder .helmw{width:58px;height:78px;background:var(--img-helmw) center/contain no-repeat}
 .vplaceholder .play{width:56px;height:56px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center}
@@ -482,7 +483,7 @@ footer .bases{color:rgba(255,255,255,.4);font-size:.7rem;line-height:1.7;max-wid
 const CONFIG = {
   SCRIPT_URL : "",
   WHATSAPP   : "5491136276885",
-  INSTAGRAM  : "https://instagram.com/",
+  INSTAGRAM  : "https://www.instagram.com/pdc_barberia",
   REEL_URL   : "https://www.instagram.com/reel/DXMtyvxAbrS/",
   HERO_VIDEO : "",
   TOTAL      : 99999,
