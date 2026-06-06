@@ -251,8 +251,8 @@ section{padding:64px 0;position:relative;background:#fff}
 .video-sec h2 .grey{display:block;color:#bdbcb8}
 .vframe{max-width:330px;margin:0 auto;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid #2a2a2a;background:#0a0a0a;position:relative}
 .vframe iframe,.vframe video{width:100%;height:100%;border:0;display:block;object-fit:cover}
-.vframe.reel{aspect-ratio:auto;width:100%;max-width:540px;min-height:0;height:auto;background:transparent;border:0;border-radius:0;overflow:visible}
-.vframe.reel iframe,.vframe.reel blockquote.instagram-media{width:100%!important;max-width:540px!important;min-width:280px!important;margin:0 auto!important}
+.vframe.reel{aspect-ratio:auto;width:100%;max-width:440px;background:#fff;border:2px solid var(--ink);border-radius:6px;overflow:hidden;min-height:0;margin:0 auto;box-shadow:0 20px 50px -28px rgba(0,0,0,.7)}
+.vframe.reel iframe{display:block;width:100%;height:780px;border:0;background:#fff}
 .vplaceholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:#0a0a0a}
 .vplaceholder .helmw{width:58px;height:78px;background:var(--img-helmw) center/contain no-repeat}
 .vplaceholder .play{width:56px;height:56px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center}
@@ -512,9 +512,8 @@ $("paseLink").href="https://wa.me/"+CONFIG.WHATSAPP+"?text="+paseMsg;
 $("igLink").href=CONFIG.INSTAGRAM;
 if(CONFIG.REEL_URL){
   const f=$("vframe");f.classList.add("reel");
-  f.innerHTML='<blockquote class="instagram-media" data-instgrm-permalink="'+CONFIG.REEL_URL+'" data-instgrm-version="14" style="margin:0;width:100%;min-width:300px;background:#fff"></blockquote>';
-  const s=document.createElement("script");s.async=true;s.src="https://www.instagram.com/embed.js";
-  s.onload=()=>{window.instgrm&&window.instgrm.Embeds.process();};document.body.appendChild(s);
+  const url=CONFIG.REEL_URL.split("?")[0].replace(/\/$/,"")+"/embed";
+  f.innerHTML='<iframe src="'+url+'" allow="encrypted-media" allowtransparency="true" allowfullscreen="true" scrolling="no" frameborder="0"></iframe>';
 }
 
 function refresh(){
